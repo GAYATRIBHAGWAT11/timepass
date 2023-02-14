@@ -7,20 +7,22 @@ let imgCont = document.querySelector(".img")
 
 let i = 0;
 console.log(imgObj.length);
-nextBtn.addEventListener("click", function () {
 
-    if (i < imgObj.length) {
-        imgCont.innerHTML = `<img src=${imgObj[i]}>`
-        i++
+// nextBtn.addEventListener("click", function () {
+setInterval(() => {
+    imgCont.innerHTML = `<img src=${imgObj[i]}>`
+    i++;
+    if (i > imgObj.length - 1) {
+        i = 0;
     }
-})
+}, 1000)
 
 
-
+// })
 prevBtn.addEventListener("click", function () {
-
-    if (i >= 0) {
-        imgCont.innerHTML = `<img src=${imgObj[i]}>`
-        i--
+    imgCont.innerHTML = `<img src=${imgObj[i]}>`
+    i--;
+    if (i < 0) {
+        i = imgObj.length - 1
     }
 })

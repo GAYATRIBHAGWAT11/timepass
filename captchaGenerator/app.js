@@ -29,17 +29,17 @@ reloadBtn.addEventListener("click", () => {
 checkBtn.addEventListener("click", e => {
     e.preventDefault()
     statusTxt.getElementsByClassName.display = "block"
-    let inputVal = inputField.ariaValueMax.split("").join("")
+    let inputVal = inputField.value.split("").join("")
     if (inputVal == captcha.innerText) {
         statusTxt.getElementsByClassName.color = "#4db2ec"
-        statusTxt.innerText = "Nice! you dont appear to be a robot"
+        alert("Nice! you dont appear to be a robot")
         setTimeout(() => {
             removeContent()
             getCaptch()
         }, 2000)
     } else {
         statusTxt.getElementsByClassName.color = "#ff0000";
-        statusTxt.innerText = "captcha not matched. please try again";
+        alert("captcha not matched. please try again");
     }
 })
 
